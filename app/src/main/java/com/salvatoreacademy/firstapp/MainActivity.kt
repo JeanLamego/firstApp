@@ -1,10 +1,9 @@
 package com.salvatoreacademy.firstapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import org.w3c.dom.Text
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,9 +12,11 @@ class MainActivity : AppCompatActivity() {
 
         val btSend = findViewById<Button>(R.id.btSend)
         val tvResult = findViewById<TextView>(R.id.tvResult)
+        val etName = findViewById<TextView>(R.id.etName)
+
 
         btSend.setOnClickListener {
-            tvResult.text = "Jean Lamego";
+            tvResult.text = etName.text.toString();
 
         }
     }
