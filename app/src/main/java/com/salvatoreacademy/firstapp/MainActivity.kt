@@ -1,5 +1,6 @@
 package com.salvatoreacademy.firstapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -13,11 +14,19 @@ class MainActivity : AppCompatActivity() {
         val btSend = findViewById<Button>(R.id.btSend)
         val tvResult = findViewById<TextView>(R.id.tvResult)
         val etName = findViewById<TextView>(R.id.etName)
+        val btNextPage = findViewById<Button>(R.id.btNextPage)
 
-
-        btSend.setOnClickListener {
-            tvResult.text = etName.text.toString();
+        btNextPage.setOnClickListener{
+            openNextActivity()
 
         }
+        btSend.setOnClickListener {
+            tvResult.text = etName.text.toString();
+        }
+
+    }
+    private fun openNextActivity(){
+        val intent = Intent(this, SecondActivity::class.java)
+        startActivity(intent)
     }
 }
